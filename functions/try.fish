@@ -1,7 +1,7 @@
 # Define try function manually to fix Fish shell compatibility issues
 # Solves issues addressed in open PR: https://github.com/tobi/try/pull/39
 function try
-    set -l script_path "/usr/bin/try"
+    set -l script_path /usr/bin/try
 
     if not test -x "$script_path"
         echo "Error: 'try' command not found."
@@ -9,7 +9,7 @@ function try
         return 1
     end
 
-    set -l tries_path ~/Work/tries
+    set -l tries_path ~/Documents/Tries
 
     set -l cmd
     switch "$argv[1]"
