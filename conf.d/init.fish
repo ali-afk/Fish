@@ -16,6 +16,6 @@ if status is-interactive
 
     # Configure fzf.fish keybindings - disable process search
     if command -v fzf &>/dev/null
-        fzf_configure_bindings --processes=
+        fzf_key_bindings --processes=
     end
 end
