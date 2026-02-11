@@ -1,5 +1,4 @@
 if status is-interactive
-    # Use vi keybindings
     fish_vi_key_bindings
 
     if command -v mise &>/dev/null
@@ -14,8 +13,7 @@ if status is-interactive
         starship init fish | source
     end
 
-    # Configure fzf.fish keybindings - disable process search
     if command -v fzf &>/dev/null
-        fzf_key_bindings --processes=
+        fzf_configure_bindings --processes=
     end
 end
