@@ -1,3 +1,3 @@
-function lg --wraps=git --description 'alias lg=lazygit'
+function lg --wraps=lazygit --description 'alias lg=lazygit'
     lazygit
 end

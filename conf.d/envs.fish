@@ -1,3 +1,6 @@
+set -gx OMARCHY_PATH $HOME/.local/share/omarchy
+fish_add_path $OMARCHY_PATH/bin $HOME/.local/bin
+
 set -gx SUDO_EDITOR "$EDITOR"
 set -gx BAT_THEME ansi
 set -g fish_greeting

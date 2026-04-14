@@ -1,4 +1,6 @@
 function img2jpg-small
-  set base (string replace -r '\.[^.]*$' '' -- $argv[1])
-  magick "$argv[1]" -resize "1080x>" -quality 95 -strip "$base.jpg"
+  set img $argv[1]
+  set rest $argv[2..]
+  set base (string replace -r '\.[^.]*$' '' -- $img)
+  magick "$img" $rest -resize "1080x>" -quality 85 -strip "$base-small.jpg"
 end

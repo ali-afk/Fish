@@ -1,3 +1,3 @@
-function lsa --wraps='ls -a' --description 'alias lsa=ls -a'
+function lsa --wraps=ls --description 'ls including hidden files'
   ls -a $argv
 end
