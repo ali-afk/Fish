@@ -1,4 +1,4 @@
-function fip --description 'Forward ports to remote host'
+function fip --wraps='ssh' --description 'Forward SSH ports to remote host'
   if test (count $argv) -lt 2
     echo "Usage: fip <host> <port1> [port2] ..."
     return 1

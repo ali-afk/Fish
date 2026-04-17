@@ -1,4 +1,4 @@
-function dip --description 'Stop forwarded ports'
+function dip --wraps='ssh' --description 'Stop SSH port forwarding'
   if test (count $argv) -eq 0
     echo "Usage: dip <port1> [port2] ..."
     return 1

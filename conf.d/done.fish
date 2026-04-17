@@ -24,6 +24,10 @@ if not status is-interactive
     exit
 end
 
+# Set settings for https://github.com/franciscolourenco/done
+set -U __done_min_cmd_duration 10000
+set -U __done_notification_urgency_level low
+
 set -g __done_version 1.19.1
 
 function __done_run_powershell_script
