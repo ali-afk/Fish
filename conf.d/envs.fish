@@ -1,5 +1,3 @@
-set -g fish_greeting
-
 # History configuration - match bash HISTSIZE
 set -g fish_history_max_size 32768
 

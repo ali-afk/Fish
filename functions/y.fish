@@ -1,4 +1,4 @@
-function y
+function y --wraps=yazi --description 'use yazi to change dirs'
     set tmp (mktemp -t "yazi-cwd.XXXXXX")
     yazi $argv --cwd-file="$tmp"
     if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
