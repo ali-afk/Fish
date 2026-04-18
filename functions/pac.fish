@@ -32,8 +32,3 @@ function pac --description 'yay wrapper with intuitive subcommands'
             yay $argv
     end
 end
-
-function pacfix --wraps='sudo rm' --description 'Remove pacman database lock file'
-    sudo rm /var/lib/pacman/db.lck
-end
-
