@@ -14,10 +14,16 @@ abbr decompress 'tar -xzf'
 # Systemctl shortcuts
 abbr scu 'systemctl --user'
 abbr scust 'systemctl --user status'
+abbr scudr 'systemctl --user daemon-reload'
 abbr scure 'systemctl --user restart'
+abbr scuen 'systemctl --user enable'
+abbr scudi 'systemctl --user disable'
 abbr sc 'sudo systemctl'
 abbr scst 'sudo systemctl status'
+abbr scdr 'sudo systemctl daemon-reload'
 abbr scre 'sudo systemctl restart'
+abbr scen 'sudo systemctl enable'
+abbr scdi 'sudo systemctl disable'
 
 # Git shortcuts
 abbr g git
@@ -37,9 +43,15 @@ abbr no 'n "$VAULT"'
 
 # Package management
 abbr pacfix 'sudo rm /var/lib/pacman/db.lck'
+abbr paci 'yay -S'
+abbr pacr 'yay -Rns'
+abbr pacs 'yay -Ss'
+abbr pacsi 'yay -Si'
+abbr pacq 'yay -Qs'
+abbr pacqi 'yay -Qi'
 
 # Safe deletion system
-abbr del 'trash -r'
+abbr del 'trash -rf'
 abbr delf 'rm -rfI'
 abbr delfi 'rm -rfi'
 abbr edel trash-empty

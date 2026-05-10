@@ -9,7 +9,7 @@ function try
         return 1
     end
 
-    set -l tries_path ~/Work/Tries
+    set -l tries_path ~/Projects/Tries
 
     set -l cmd
     switch "$argv[1]"
