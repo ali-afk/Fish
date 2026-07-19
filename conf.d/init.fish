@@ -14,6 +14,14 @@ if status is-interactive
     end
 
     if command -v fzf &>/dev/null
-        fzf_configure_bindings --processes=
+        fzf_configure_bindings
+    end
+
+    if command -v uv &>/dev/null
+        uv generate-shell-completion fish | source
+    end
+
+    if command -v dua &>/dev/null
+        dua completions fish | source
     end
 end

@@ -1,0 +1,67 @@
+function fish_user_key_bindings
+    # Load vi key bindings
+    fish_vi_key_bindings
+
+    # Helper function to copy current line to clipboard
+    function fish_clipboard_copy_line --on-variable fish_bind_mode
+        # Get the current command line
+        set -l cmdline (commandline)
+        if test -n "$cmdline"
+            printf '%s' $cmdline | fish_clipboard_copy
+        end
+    end
+
+    # Helper function for visual mode clipboard copy
+    function fish_visual_clipboard_copy
+        fish_clipboard_copy
+        commandline -f end-selection repaint-mode
+    end
+
+    # Helper function for visual mode clipboard cut  
+    function fish_visual_clipboard_cut
+        fish_clipboard_copy
+        kill-selection
+        end-selection
+        backward-char
+        repaint-mode
+    end
+
+    ########################################
+    # VISUAL MODE CLIPBOARD BINDINGS
+    ########################################
+
+    # gy - Copy selection to system clipboard (yank to clipboard)
+    bind --preset -M visual gy fish_visual_clipboard_copy
+
+    # gd - Cut selection to system clipboard (delete to clipboard)
+    bind --preset -M visual gd fish_visual_clipboard_cut
+
+    # gp - Paste from clipboard after cursor
+    bind --preset -M visual gp 'set -g fish_cursor_end_mode exclusive' forward-char 'set -g fish_cursor_end_mode inclusive' fish_clipboard_paste
+
+    # gP - Paste from clipboard at cursor position
+    bind --preset -M visual gP fish_clipboard_paste
+
+    ########################################
+    # NORMAL MODE CLIPBOARD BINDINGS  
+    ########################################
+
+    # gyy or gY - Copy current line to clipboard
+    bind --preset gyy fish_clipboard_copy_line
+    bind --preset gY fish_clipboard_copy_line
+
+    # gp - Paste from clipboard after cursor
+    bind --preset gp 'set -g fish_cursor_end_mode exclusive' forward-char 'set -g fish_cursor_end_mode inclusive' fish_clipboard_paste
+
+    # gP - Paste from clipboard at cursor position
+    bind --preset gP fish_clipboard_paste
+
+    ########################################
+    # INSERT MODE CLIPBOARD BINDINGS
+    ########################################
+
+    # In insert mode, use Ctrl+X/Ctrl+V like emacs mode
+    bind --preset -M insert \cx fish_clipboard_copy
+    bind --preset -M insert \cv fish_clipboard_paste
+end
+

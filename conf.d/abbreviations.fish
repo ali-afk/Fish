@@ -42,13 +42,15 @@ abbr nh 'n ~/.config/hypr/'
 abbr no 'n "$VAULT"'
 
 # Package management
-abbr pacfix 'sudo rm /var/lib/pacman/db.lck'
 abbr paci 'yay -S'
 abbr pacr 'yay -Rns'
 abbr pacs 'yay -Ss'
 abbr pacsi 'yay -Si'
 abbr pacq 'yay -Qs'
 abbr pacqi 'yay -Qi'
+abbr pacfix 'sudo rm /var/lib/pacman/db.lck'
+abbr pacdown 'sudo downgrade --pacman yay'
+abbr pacclean 'yay -Rns (pacman -Qtdq)'
 
 # Safe deletion system
 abbr del 'trash -rf'
